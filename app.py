@@ -6,10 +6,9 @@ from extensions import jwt, bcrypt
 def create_app():
     app = Flask(__name__)
     app.config.from_object(Config)
-    
     jwt.init_app(app)
     bcrypt.init_app(app)
-    
+
     CORS(app, resources={
         r"/api/*": {
             "origins": ["http://localhost:4200", "http://127.0.0.1:4200"],
