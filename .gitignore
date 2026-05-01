@@ -71,5 +71,8 @@ Thumbs.db
 instance/
 .webassets-cache
 
+# Documentation
+README.md
+
 # MySQL dumps
 *.sql
