@@ -77,3 +77,4 @@ README.md
 
 # MySQL dumps
 *.sql
+!database/schema.sql
