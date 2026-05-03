@@ -29,6 +29,7 @@ def create_app():
     from subproceso_tecnicas.routes import subproceso_tecnicas_bp
     from requerimientos.routes import requerimientos_bp
     from ejecuciones.routes import ejecuciones_bp
+    from diagramas.routes import diagramas_bp
     
     app.register_blueprint(auth_bp, url_prefix='/api/auth')
     app.register_blueprint(usuarios_bp, url_prefix='/api/usuarios')
@@ -42,6 +43,7 @@ def create_app():
     app.register_blueprint(subproceso_tecnicas_bp, url_prefix='/api/subproceso-tecnicas')
     app.register_blueprint(requerimientos_bp, url_prefix='/api/requerimientos')
     app.register_blueprint(ejecuciones_bp, url_prefix='/api/ejecuciones')
+    app.register_blueprint(diagramas_bp, url_prefix='/api/diagramas')
     
     return app
 
