@@ -36,6 +36,30 @@ CREATE TABLE `criterios_aceptacion` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Table structure for table `diagramas`
+--
+
+DROP TABLE IF EXISTS `diagramas`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `diagramas` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `proyecto_id` int NOT NULL,
+  `tipo` varchar(50) NOT NULL,
+  `nombre` varchar(200) NOT NULL,
+  `datos` json NOT NULL,
+  `creado_por` int NOT NULL,
+  `fecha_creacion` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `fecha_actualizacion` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `proyecto_id` (`proyecto_id`),
+  KEY `creado_por` (`creado_por`),
+  CONSTRAINT `diagramas_ibfk_1` FOREIGN KEY (`proyecto_id`) REFERENCES `proyectos` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `diagramas_ibfk_2` FOREIGN KEY (`creado_por`) REFERENCES `usuarios` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
 -- Table structure for table `ejecuciones_tecnica`
 --
 
